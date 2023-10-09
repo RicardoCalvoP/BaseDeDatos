@@ -202,7 +202,7 @@ void ListaDobleLigada::InsertarInicioLista(int numero)
 
 void ListaDobleLigada::search(int numero)
 {
-    int count = 0, posision = 0, j = 0;
+    int count = 0, posision = 0;
     int Position_Array[LongitudLista()];
     nodo *temporal;
     temporal = inicio;
@@ -226,11 +226,11 @@ void ListaDobleLigada::search(int numero)
     }
     else
     {
-        cout << "El numero " << numero << "fue encotrado " << count << " veces en las posiciones ";
+        cout << "El numero " << numero << " fue encotrado " << count << " veces en las posiciones ";
         for (int i = 0; i < count - 1; i++)
         {
-            cout << Position_Array[i] << ", ";
+            cout << "[" << Position_Array[i] << "] ";
         }
-        cout << posision << "\n";
+        cout << "y [" << Position_Array[count - 1] << "]\n";
     }
 }
