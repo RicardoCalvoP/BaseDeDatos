@@ -202,6 +202,11 @@ void ListaDobleLigada::InsertarInicioLista(int numero)
 
 void ListaDobleLigada::search(int numero)
 {
+    /*
+    Busca un numero dado por el usuario y verifica que si este en la lista
+    una vez verificado que este en la lista guardara la posision (es) en las cuales
+    este numero es encontrado dentro de la lista
+    */
     int count = 0, posision = 0;
     int Position_Array[LongitudLista()];
     nodo *temporal;
