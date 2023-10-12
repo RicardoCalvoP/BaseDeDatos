@@ -292,17 +292,17 @@ void ListaDobleLigada::EliminarPares()
     }
     cout << "Saliendo de la funcnion\n";
 }
-
+/*
 void ListaDobleLigada::Promedio()
 {
-    /*
+
     Calcula el promedio de todos los valores dentro de nuestra lista
-    */
+
 }
 
-void ListaDobleLigada::EliminaNumeroLista(int num)
-{
-    /*
+void ListaDobleLigada::EliminaNumeroLista(int num){
+
     Elimina todos los numeros de la lista que el ususario haya mandado
-    */
+
 }
+*/
