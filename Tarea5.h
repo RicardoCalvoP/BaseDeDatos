@@ -32,6 +32,9 @@ public:
     // Funciones Tarea 5
     void InsertarInicioLista(int numero);
     void search(int numero);
+    void EliminarPares();
+    void Promedio();
+    void EliminaNumeroLista(int num);
 };
 
 ListaDobleLigada::ListaDobleLigada()
@@ -208,7 +211,10 @@ void ListaDobleLigada::search(int numero)
     este numero es encontrado dentro de la lista
     */
     int count = 0, posision = 0;
+
+    // Creamos una arreglo para almacenar las posiciones del numero buscado
     int Position_Array[LongitudLista()];
+
     nodo *temporal;
     temporal = inicio;
     while (temporal != NULL)
@@ -238,4 +244,64 @@ void ListaDobleLigada::search(int numero)
         }
         cout << "y [" << Position_Array[count - 1] << "]\n";
     }
+}
+
+void ListaDobleLigada::EliminarPares()
+{
+    /*
+    Esta funcion buscará los numeros pares dentro de la lista ligada
+    y elimina estos nodos
+    */
+    cout << "Borrando los numeros pares de la Pila...\n";
+    nodo *elemento = inicio;
+    while (elemento != NULL)
+    {
+        if (elemento->valor % 2 == 0)
+        {
+            nodo *temporal;
+            if (elemento == inicio)
+            {
+                temporal = elemento;
+                inicio = elemento->siguiente;
+                inicio->anterior = NULL;
+                delete temporal;
+            }
+            else if (elemento == fin)
+            {
+                temporal = elemento;
+                fin = elemento->anterior;
+                fin->siguiente = NULL;
+                delete temporal;
+            }
+            else
+            {
+                nodo *IndiceAnterior;
+                nodo *IndiceSiguiete;
+
+                elemento = temporal;
+                IndiceAnterior = elemento->anterior;
+                IndiceSiguiete = elemento->siguiente;
+
+                IndiceAnterior->siguiente = IndiceSiguiete;
+                IndiceSiguiete->anterior = IndiceAnterior;
+
+                delete temporal;
+            }
+        }
+        elemento = elemento->siguiente;
+    }
+}
+
+void ListaDobleLigada::Promedio()
+{
+    /*
+    Calcula el promedio de todos los valores dentro de nuestra lista
+    */
+}
+
+void ListaDobleLigada::EliminaNumeroLista(int num)
+{
+    /*
+    Elimina todos los numeros de la lista que el ususario haya mandado
+    */
 }
