@@ -11,12 +11,8 @@ int main()
     LDL.InsertarInicioLista(5);
     LDL.InsertarInicioLista(4);
     LDL.InsertarInicioLista(3);
-    LDL.InsertarInicioLista(1);
-    LDL.InsertarInicioLista(1);
-    LDL.InsertarInicioLista(2);
-    LDL.InsertarInicioLista(3);
-    LDL.search(10);
-    LDL.search(1);
+    LDL.MostrarElementosInicio();
+    LDL.EliminarPares();
 
     return 0;
 }

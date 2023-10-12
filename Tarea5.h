@@ -290,6 +290,7 @@ void ListaDobleLigada::EliminarPares()
         }
         elemento = elemento->siguiente;
     }
+    cout << "Saliendo de la funcnion\n";
 }
 
 void ListaDobleLigada::Promedio()
