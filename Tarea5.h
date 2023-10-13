@@ -47,7 +47,7 @@ ListaDobleLigada::~ListaDobleLigada()
 {
 }
 
-inline int ListaDobleLigada::ListaVacia()
+int ListaDobleLigada::ListaVacia()
 {
     if (inicio == NULL)
     {
@@ -59,10 +59,10 @@ inline int ListaDobleLigada::ListaVacia()
     }
 }
 
-inline int ListaDobleLigada::LongitudLista()
+int ListaDobleLigada::LongitudLista()
 {
     nodo *temporal;
-    int longitud;
+    int longitud = 0;
     temporal = inicio;
     while (temporal != NULL)
     {
@@ -310,7 +310,7 @@ void ListaDobleLigada::Promedio()
         promedio += temporal->valor;
         temporal = temporal->siguiente;
     }
-    promedio = promedio / LongitudLista();
+    promedio /= LongitudLista();
     cout << "El promedio es: " << promedio << "\n";
 }
 
