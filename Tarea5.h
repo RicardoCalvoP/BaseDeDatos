@@ -91,6 +91,7 @@ void ListaDobleLigada::InsertarFinalLista(int numero)
     }
     else
     {
+        fin->siguiente = elemento;
         elemento->valor = numero;
         elemento->siguiente = NULL;
         elemento->anterior = fin;
@@ -262,15 +263,19 @@ void ListaDobleLigada::EliminarPares()
             if (elemento == inicio)
             {
                 temporal = elemento;
-                inicio = elemento->siguiente;
+                elemento = elemento->siguiente;
+                inicio = elemento;
                 inicio->anterior = NULL;
+                cout << "Eliminando " << temporal->valor << "\n";
                 delete temporal;
             }
             else if (elemento == fin)
             {
                 temporal = elemento;
-                fin = elemento->anterior;
+                elemento = elemento->anterior;
+                fin = elemento;
                 fin->siguiente = NULL;
+                cout << "Eliminando " << temporal->valor << "\n";
                 delete temporal;
             }
             else
@@ -278,13 +283,14 @@ void ListaDobleLigada::EliminarPares()
                 nodo *IndiceAnterior;
                 nodo *IndiceSiguiete;
 
-                elemento = temporal;
+                temporal = elemento;
                 IndiceAnterior = elemento->anterior;
                 IndiceSiguiete = elemento->siguiente;
 
                 IndiceAnterior->siguiente = IndiceSiguiete;
                 IndiceSiguiete->anterior = IndiceAnterior;
-
+                elemento = elemento->siguiente;
+                cout << "Eliminando " << temporal->valor << "\n";
                 delete temporal;
             }
         }
@@ -292,17 +298,50 @@ void ListaDobleLigada::EliminarPares()
     }
     cout << "Saliendo de la funcnion\n";
 }
-/*
+
 void ListaDobleLigada::Promedio()
 {
+    // Calcula el promedio de todos los valores dentro de nuestra lista
+    float promedio = 0;
+    nodo *temporal = inicio;
 
-    Calcula el promedio de todos los valores dentro de nuestra lista
-
+    while (temporal != NULL)
+    {
+        promedio += temporal->valor;
+        temporal = temporal->siguiente;
+    }
+    promedio = promedio / LongitudLista();
+    cout << "El promedio es: " << promedio << "\n";
 }
 
-void ListaDobleLigada::EliminaNumeroLista(int num){
+void ListaDobleLigada::EliminaNumeroLista(int num)
+{
 
-    Elimina todos los numeros de la lista que el ususario haya mandado
+    // Elimina todos los numeros de la lista que el ususario haya mandado
+    nodo *temporal = inicio;
+    while (temporal != NULL)
+    {
+        if (temporal->valor == num)
+        {
+            nodo *eliminar;
+            if (temporal == inicio)
+            {
+                eliminar = temporal;
+                temporal = temporal->siguiente;
+                inicio = temporal;
+                inicio->anterior = NULL;
+                delete eliminar;
+            }
+            else if (temporal == fin)
+            {
+                eliminar = temporal;
+                fin = temporal->anterior;
+                temporal = temporal->siguiente;
+                fin->siguiente = NULL;
+                delete eliminar;
+            }
 
+            temporal = temporal->siguiente;
+        }
+    }
 }
-*/

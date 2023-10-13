@@ -6,11 +6,14 @@ int main()
 {
     system("cls");
     ListaDobleLigada LDL;
-    LDL.InsertarInicioLista(1);
-    LDL.InsertarInicioLista(2);
-    LDL.InsertarInicioLista(5);
-    LDL.InsertarInicioLista(4);
-    LDL.InsertarInicioLista(3);
+    LDL.InsertarFinalLista(1);
+    LDL.InsertarFinalLista(2);
+    LDL.InsertarFinalLista(5);
+    LDL.InsertarFinalLista(4);
+    LDL.InsertarFinalLista(3);
+    LDL.InsertarFinalLista(2);
+    LDL.MostrarElementosInicio();
+
     LDL.EliminarPares();
     LDL.MostrarElementosInicio();
 
