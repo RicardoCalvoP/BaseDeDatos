@@ -1,21 +1,14 @@
 #include <iostream>
-#include "Tarea5.h"
+#include "Tareas/Tarea5.h"
 using namespace std;
 
 int main()
 {
     system("cls");
-    ListaDobleLigada LDL;
-    LDL.InsertarFinalLista(1);
-    LDL.InsertarFinalLista(2);
-    LDL.InsertarFinalLista(5);
-    LDL.InsertarFinalLista(4);
-    LDL.InsertarFinalLista(3);
-    LDL.InsertarFinalLista(2);
-    cout << "\n";
-    LDL.MostrarElementosInicio();
-    cout << "\n";
-    LDL.EliminaNumeroLista(2);
-    LDL.MostrarElementosInicio();
+    ListaLigada LL;
+    LL.InsertarInicioLista(3);
+    LL.InsertarInicioLista(2);
+    LL.InsertarInicioLista(1);
+    LL.Show();
     return 0;
 }
