@@ -318,30 +318,46 @@ void ListaDobleLigada::EliminaNumeroLista(int num)
 {
 
     // Elimina todos los numeros de la lista que el ususario haya mandado
-    nodo *temporal = inicio;
-    while (temporal != NULL)
+    nodo *elemento = inicio;
+    while (elemento != NULL)
     {
-        if (temporal->valor == num)
+        if (elemento->valor == num)
         {
-            nodo *eliminar;
-            if (temporal == inicio)
+            nodo *temporal;
+            if (elemento == inicio)
             {
-                eliminar = temporal;
-                temporal = temporal->siguiente;
-                inicio = temporal;
+                temporal = elemento;
+                elemento = elemento->siguiente;
+                inicio = elemento;
                 inicio->anterior = NULL;
-                delete eliminar;
+                cout << "Eliminando " << temporal->valor << "\n";
+                delete temporal;
             }
-            else if (temporal == fin)
+            else if (elemento == fin)
             {
-                eliminar = temporal;
-                fin = temporal->anterior;
-                temporal = temporal->siguiente;
+                temporal = elemento;
+                elemento = elemento->anterior;
+                fin = elemento;
                 fin->siguiente = NULL;
-                delete eliminar;
+                cout << "Eliminando " << temporal->valor << "\n";
+                delete temporal;
             }
+            else
+            {
+                nodo *IndiceAnterior;
+                nodo *IndiceSiguiete;
 
-            temporal = temporal->siguiente;
+                temporal = elemento;
+                IndiceAnterior = elemento->anterior;
+                IndiceSiguiete = elemento->siguiente;
+
+                IndiceAnterior->siguiente = IndiceSiguiete;
+                IndiceSiguiete->anterior = IndiceAnterior;
+                elemento = elemento->siguiente;
+                cout << "Eliminando " << temporal->valor << "\n";
+                delete temporal;
+            }
         }
+        elemento = elemento->siguiente;
     }
 }
