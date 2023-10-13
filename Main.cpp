@@ -15,12 +15,7 @@ int main()
     cout << "\n";
     LDL.MostrarElementosInicio();
     cout << "\n";
-    LDL.Promedio();
-    cout << "\n";
-    LDL.EliminarPares();
-    cout << "\n";
+    LDL.EliminaNumeroLista(2);
     LDL.MostrarElementosInicio();
-    cout << "\n";
-    LDL.Promedio();
     return 0;
 }
