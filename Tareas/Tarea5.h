@@ -203,7 +203,7 @@ void ListaLigada::EliminarPares()
    Esta funcion buscará los numeros pares dentro de la lista ligada
    y elimina estos nodos
    */
-    cout << "Borrando los numeros pares de la Pila...\n";
+    cout << "Borrando los numeros pares de la Lista...\n";
     nodo *elemento = indice;
 
     while (elemento != NULL)
