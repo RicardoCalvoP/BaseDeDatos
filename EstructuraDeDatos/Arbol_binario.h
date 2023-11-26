@@ -31,7 +31,7 @@ public:
         return raiz;
     };
     /* Para funciones se recomienda poner el
-     * pegado a lo que estas buscando */
+     "*"pegado a lo que estas buscando */
     void insertarNodo(int num);
     Arbol_binario::~Arbol_binario()
     {
