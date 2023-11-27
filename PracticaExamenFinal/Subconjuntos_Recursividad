@@ -1,7 +1,7 @@
 import os
 
 
-def existe_subconjunto_suma(lista, objetivo, indice=0, subconjunto_actual=[]):
+def existe_subconjunto_suma(lista, objetivo, indice = 0, subconjunto_actual = []):
     if objetivo == 0:
         # print("Subconjunto con la suma deseada:", subconjunto_actual)
         return True
