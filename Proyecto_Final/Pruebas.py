@@ -49,7 +49,7 @@ def colocar_reinas(tablero, fila, size, num_soluciones):
         if es_seguro(tablero, fila, columna, size):
             tablero[fila][columna] = 'Q'
             colocar_reinas(tablero, fila + 1, size, num_soluciones)
-            tablero[fila][columna] = 'o'
+            tablero[fila][columna] = '*'
 
 
 os.system("cls")
