@@ -54,8 +54,13 @@ def colocar_reinas(tablero, fila, size):
     for columna in range(size):
         if es_seguro(tablero, fila, columna, size):
             tablero[fila][columna] = 'Q'
+<<<<<<< HEAD
             colocar_reinas(tablero, fila + 1, size)
             tablero[fila][columna] = 'o'
+=======
+            colocar_reinas(tablero, fila + 1, size, num_soluciones)
+            tablero[fila][columna] = '*'
+>>>>>>> 7c8b35c49afba5c65965295da687098e972dbb33
 
 
 resolverNreinas(11)  # Cambia el número de reinas aquí
